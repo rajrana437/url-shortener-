@@ -31,6 +31,11 @@ const HomePage = () => {
     }
   };
 
+  const handleReset = () => {
+    setUrl("");
+    setShortUrl("");
+  };
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-[#FFF7D1] to-[#FFECC8]">
       <div className="w-full max-w-lg p-8 bg-white shadow-lg rounded-xl border border-gray-200">
@@ -44,6 +49,18 @@ const HomePage = () => {
             className="w-full px-4 py-3 border text-gray-700 border-[#FFD09B] rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#FFB0B0]"
           />
         </div>
+
+        {shortUrl ? 
+      
+              <button
+              onClick={handleReset}
+              className="w-full px-4 py-3 text-white font-semibold rounded-lg shadow-md bg-[#FFB0B0] hover:bg-[#FFD09B]"
+            >
+              Reset
+            </button>
+
+            :
+
         <button
           onClick={handleShorten}
           disabled={isLoading}
@@ -53,6 +70,8 @@ const HomePage = () => {
         >
           {isLoading ? "Shortening..." : "Shorten URL"}
         </button>
+
+      }
 
         {shortUrl && (
           <div className="mt-6 p-4 bg-[#FFECC8] text-[#FFB0B0] rounded-lg">
@@ -75,6 +94,8 @@ const HomePage = () => {
             </div>
           </div>
         )}
+
+
       </div>
     </div>
   );
