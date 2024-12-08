@@ -46,7 +46,10 @@ const HomePage = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-[#FFF7D1] to-[#FFECC8]">
       <div className="w-full max-w-lg p-8 bg-white shadow-lg rounded-xl border border-gray-200">
-        <h1 className="text-3xl font-bold text-[#FFB0B0] text-center mb-6">ClipLink</h1>
+        <div className="flex items-center justify-center mb-6">
+          <img src="/logo4.png" alt="Logo" className="w-7 h-7 mr-2" />
+          <h1 className="text-3xl font-bold text-[#FFB0B0]">ClipLink</h1>
+        </div>
         <div className="relative mb-6">
           <input
             type="text"
